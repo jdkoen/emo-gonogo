@@ -1,3 +1,7 @@
+# Ignore stimulus image databases
+images/
+praC_images/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
