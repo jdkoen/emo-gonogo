@@ -86,11 +86,11 @@
         <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="size" updates="constant" val="(12.0, 9.0)" valType="list"/>
-        <Param name="startEstim" updates="None" val=".25" valType="num"/>
+        <Param name="startEstim" updates="None" val=".5" valType="num"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="$trial_start_isi_duration" valType="num"/>
+        <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="num"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$image_duration" valType="num"/>
+        <Param name="stopVal" updates="constant" val="image_duration" valType="num"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="texture resolution" updates="constant" val="128" valType="num"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -114,7 +114,7 @@
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="shape" updates="constant" val="regular polygon..." valType="str"/>
         <Param name="size" updates="constant" val="(0.75,0.75)" valType="code"/>
-        <Param name="startEstim" updates="None" val=".25" valType="code"/>
+        <Param name="startEstim" updates="None" val=".5" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="$trial_start_isi_duration" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -137,7 +137,7 @@
         <Param name="ori" updates="constant" val="0" valType="num"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val=".75" valType="num"/>
+        <Param name="startEstim" updates="None" val="1" valType="num"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="$trial_start_isi_duration + image_duration" valType="num"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -156,7 +156,7 @@
         <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
         <Param name="name" updates="None" val="response" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val=".25" valType="code"/>
+        <Param name="startEstim" updates="None" val=".5" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="$trial_start_isi_duration " valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -185,7 +185,7 @@
       <StaticComponent name="trial_ISI">
         <Param name="code" updates="None" val="" valType="code"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val=".25" valType="num"/>
+        <Param name="durationEstim" updates="None" val=".5" valType="num"/>
         <Param name="name" updates="None" val="trial_ISI" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="startEstim" updates="None" val="" valType="num"/>
