@@ -352,7 +352,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Make the save file name (This should have accurate id as it is reading from it)&amp;#10;save_file = os.path.join(save_dir, f&quot;sub-{expInfo['id']}_task-{this_block}_run-{this_phase}_beh&quot;&amp;#10;&amp;#10;# Save it many different ways&amp;#10;trials.saveAsWideText(save_file + '.tsv')&amp;#10;trials.saveAsWideText(save_file + '.csv')&amp;#10;trials.saveAsPickle(save_file)&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Make the save file name (This should have accurate id as it is reading from it)&amp;#10;save_file_name = f&quot;sub-{expInfo['id']}_task-{this_block}_run-{this_phase}_beh&quot;&amp;#10;save_pickle = save_dir /  save_file_name&amp;#10;save_tsv = save_dir / save_file_name + '.tsv'&amp;#10;save_csv = save_dir / save_file_name + '.csv'&amp;#10;&amp;#10;# Save it many different ways&amp;#10;trials.saveAsWideText(save_tsv)&amp;#10;trials.saveAsWideText(save_csv)&amp;#10;trials.saveAsPickle(save_pickle)&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
