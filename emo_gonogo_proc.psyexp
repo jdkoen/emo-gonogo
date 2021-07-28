@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2021.1.4">
+<PsychoPy2experiment encoding="utf-8" version="2021.1.2">
   <Settings>
     <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
     <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
@@ -13,7 +13,7 @@
     <Param name="HTML path" updates="None" val="html" valType="str"/>
     <Param name="Incomplete URL" updates="None" val="" valType="str"/>
     <Param name="JS libs" updates="None" val="packaged" valType="str"/>
-    <Param name="Monitor" updates="None" val="RoseStim" valType="str"/>
+    <Param name="Monitor" updates="None" val="BenQ" valType="str"/>
     <Param name="Resources" updates="None" val="[]" valType="list"/>
     <Param name="Save csv file" updates="None" val="False" valType="bool"/>
     <Param name="Save excel file" updates="None" val="False" valType="bool"/>
@@ -25,7 +25,7 @@
     <Param name="Show mouse" updates="None" val="False" valType="bool"/>
     <Param name="Units" updates="None" val="degFlat" valType="str"/>
     <Param name="Use version" updates="None" val="" valType="str"/>
-    <Param name="Window size (pixels)" updates="None" val="[1440, 900]" valType="code"/>
+    <Param name="Window size (pixels)" updates="None" val="[1920, 1080]" valType="code"/>
     <Param name="blendMode" updates="None" val="avg" valType="str"/>
     <Param name="color" updates="None" val="$[0.0,0.0,0.0]" valType="str"/>
     <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
@@ -41,7 +41,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Get the image&amp;#10;if this_phase == 'prac':&amp;#10;    img_dir = 'prac_images'&amp;#10;else:&amp;#10;    img_dir = 'images'&amp;#10;this_image = os.path.join(img_dir, image_file)&amp;#10;&amp;#10;# Randomly select a trial jitter&amp;#10;shuffle(jitters_list)&amp;#10;this_jitter = round(jitters_list[0])&amp;#10;&amp;#10;# Add to the trialHandler object&amp;#10;trials.addData(u'jitter', this_jitter)&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Get the image&amp;#10;if this_phase == 'prac':&amp;#10;    img_dir = 'prac_images'&amp;#10;else:&amp;#10;    img_dir = 'images'&amp;#10;this_image = os.path.join(img_dir, image_file)&amp;#10;&amp;#10;# Randomly select a trial jitter&amp;#10;shuffle(jitters)&amp;#10;this_jitter = jitters[0]&amp;#10;print(this_jitter)&amp;#10;&amp;#10;# Add to the trialHandler object&amp;#10;trials.addData(u'jitter', this_jitter)&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -58,7 +58,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Reset the trigger&amp;#10;if eeg_record:&amp;#10;    eeg_trig_box.write(reset_bit)&amp;#10;&amp;#10;# At start of the trial, indicate I have not snt a trigger&amp;#10;stim_trigger_sent = False &amp;#10;stim_trigger_frame = 0&amp;#10;&amp;#10;# Determine trigger value&amp;#10;this_marker_code = stim_marker[trial_type][category]&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Reset the trigger&amp;#10;if eeg_record:&amp;#10;    eeg_trig_box.write(reset_bit)&amp;#10;&amp;#10;# At start of the trial, indicate I have not snt a trigger&amp;#10;stim_trigger_sent = False &amp;#10;stim_trigger_frame = 0&amp;#10;&amp;#10;# Determine trigger value&amp;#10;this_marker_code = stim_marker[condition][category]&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="# Send trigger if needed&amp;#10;if eeg_record:&amp;#10;    if stim_image.status == STARTED:&amp;#10;        if not stim_trigger_sent and this_phase == 'crit':&amp;#10;            win.callOnFlip(eeg_trig_box.write, this_marker_code)&amp;#10;            stim_trigger_sent = True &amp;#10;            stim_trigger_frame = frameN&amp;#10;            trials.addData(u'stim_trigger_frame', stim_trigger_frame)&amp;#10;    &amp;#10;    # Reset the trigger at the next flip&amp;#10;    if stim_trigger_sent and frameN == stim_trigger_frame + 5: # Do this 5 frames later&amp;#10;        win.callOnFlip(eeg_trig_box.write, reset_bit)" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -74,10 +74,10 @@
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val=".5" valType="num"/>
+        <Param name="durationEstim" updates="None" val=".4" valType="num"/>
         <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
         <Param name="flipVert" updates="constant" val="False" valType="bool"/>
-        <Param name="image" updates="set during: trial.trial_ISI" val="$this_image" valType="file"/>
+        <Param name="image" updates="set every repeat" val="$this_image" valType="file"/>
         <Param name="interpolate" updates="constant" val="linear" valType="str"/>
         <Param name="mask" updates="constant" val="" valType="str"/>
         <Param name="name" updates="None" val="stim_image" valType="code"/>
@@ -86,7 +86,7 @@
         <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="size" updates="constant" val="(12.0, 9.0)" valType="list"/>
-        <Param name="startEstim" updates="None" val=".5" valType="num"/>
+        <Param name="startEstim" updates="None" val=".2" valType="num"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="num"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -99,7 +99,7 @@
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val=".5" valType="code"/>
+        <Param name="durationEstim" updates="None" val=".4" valType="code"/>
         <Param name="fillColor" updates="constant" val="$[1,1,1]" valType="str"/>
         <Param name="fillColorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="interpolate" updates="constant" val="linear" valType="str"/>
@@ -114,34 +114,34 @@
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="shape" updates="constant" val="regular polygon..." valType="str"/>
         <Param name="size" updates="constant" val="(0.75,0.75)" valType="code"/>
-        <Param name="startEstim" updates="None" val=".5" valType="code"/>
+        <Param name="startEstim" updates="None" val=".2" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="$trial_start_isi_duration" valType="code"/>
+        <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$image_duration" valType="code"/>
+        <Param name="stopVal" updates="constant" val="image_duration" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
       </PolygonComponent>
       <TextComponent name="trial_red_fixation">
-        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="color" updates="constant" val="red" valType="color"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="1.25" valType="num"/>
+        <Param name="durationEstim" updates="None" val="2" valType="num"/>
         <Param name="flip" updates="constant" val="None" valType="str"/>
         <Param name="font" updates="constant" val="Open Sans" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="letterHeight" updates="constant" val="1" valType="num"/>
         <Param name="name" updates="None" val="trial_red_fixation" valType="code"/>
-        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="opacity" updates="constant" val="1" valType="num"/>
         <Param name="ori" updates="constant" val="0" valType="num"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val="1" valType="num"/>
+        <Param name="startEstim" updates="None" val="0" valType="num"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="$trial_start_isi_duration + image_duration" valType="num"/>
+        <Param name="startVal" updates="None" val="0" valType="num"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$this_jitter" valType="num"/>
+        <Param name="stopVal" updates="constant" val="trial_start_isi_duration + image_duration + this_jitter" valType="num"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="text" updates="constant" val="+" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -152,15 +152,15 @@
         <Param name="correctAns" updates="constant" val="" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="1.75" valType="code"/>
+        <Param name="durationEstim" updates="None" val="1.8" valType="code"/>
         <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
         <Param name="name" updates="None" val="response" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val=".5" valType="code"/>
+        <Param name="startEstim" updates="None" val=".2" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="$trial_start_isi_duration " valType="code"/>
+        <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$trial_dur_frames + imge_duration + this_jitter" valType="code"/>
+        <Param name="stopVal" updates="constant" val="image_duration + this_jitter" valType="code"/>
         <Param name="store" updates="constant" val="first key" valType="str"/>
         <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
@@ -173,28 +173,15 @@
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="# State I have not sent a response trigger yet, and initialize response.keys&amp;#10;resp_trigger_sent = False &amp;#10;resp_marker = []&amp;#10;resp_marker_frame = 0&amp;#10;&amp;#10;# Response markers are outlined in the config routine." valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="# Send response trigger&amp;#10;if eeg_record:&amp;#10;    if len(response.keys) == 1:&amp;#10;        &amp;#10;        # Code the response&amp;#10;        this_key = response.keys&amp;#10;        this_rt  = response.rt&amp;#10;        if trial_type == 'go':&amp;#10;            is_resp_cor = 1&amp;#10;            resp_type = 'correct'&amp;#10;        else:&amp;#10;            is_resp_cor = 0&amp;#10;            resp_type = 'incorrect'&amp;#10;        &amp;#10;        # Send the marker&amp;#10;        if not resp_trigger_sent and this_phase == 'crit':&amp;#10;            # Make call to send trigger&amp;#10;            win.callOnFlip(eeg_trig_box.write, resp_marker[resp_type])&amp;#10;            resp_trigger_sent = True &amp;#10;            resp_marker_frame = frameN&amp;#10;            trials.addData(u'resp_trigger_frame', resp_marker_frame)&amp;#10;            &amp;#10;    # Reset the trigger at the next flip&amp;#10;    if resp_trigger_sent and frameN == resp_marker_frame + 5:&amp;#10;        win.callOnFlip(eeg_trig_box.write, reset_bit)" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="# Send response trigger&amp;#10;if eeg_record:&amp;#10;    if len(response.keys) == 1:&amp;#10;        &amp;#10;        # Code the response&amp;#10;        this_key = response.keys&amp;#10;        this_rt  = response.rt&amp;#10;        if condition == 'go':&amp;#10;            is_resp_cor = 1&amp;#10;            resp_type = 'correct'&amp;#10;        else:&amp;#10;            is_resp_cor = 0&amp;#10;            resp_type = 'incorrect'&amp;#10;        &amp;#10;        # Send the marker&amp;#10;        if not resp_trigger_sent and this_phase == 'crit':&amp;#10;            # Make call to send trigger&amp;#10;            win.callOnFlip(eeg_trig_box.write, resp_marker[resp_type])&amp;#10;            resp_trigger_sent = True &amp;#10;            resp_marker_frame = frameN&amp;#10;            trials.addData(u'resp_trigger_frame', resp_marker_frame)&amp;#10;            &amp;#10;    # Reset the trigger at the next flip&amp;#10;    if resp_trigger_sent and frameN == resp_marker_frame + 5:&amp;#10;        win.callOnFlip(eeg_trig_box.write, reset_bit)" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="# Log and store data&amp;#10;if response.keys in ['', [], None]: # Update things I need to&amp;#10;    this_key = 'n/a'&amp;#10;    this_rt = -99&amp;#10;    if trial_type == 'nogo':&amp;#10;        is_resp_cor = 1&amp;#10;&amp;#10;# Add data to trialHandler&amp;#10;trials.addData(u'resp',this_key)&amp;#10;trials.addData(u'rt',this_rt)&amp;#10;trials.addData(u'correct',is_resp_cor)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="# Log and store data&amp;#10;if response.keys in ['', [], None]: # Update things I need to&amp;#10;    this_key = 'n/a'&amp;#10;    this_rt = -99&amp;#10;    if condition == 'nogo':&amp;#10;        is_resp_cor = 1&amp;#10;    else:&amp;#10;        is_resp_cor = 0&amp;#10;&amp;#10;# Add data to trialHandler&amp;#10;trials.addData(u'resp',this_key)&amp;#10;trials.addData(u'rt',this_rt)&amp;#10;trials.addData(u'correct',is_resp_cor)" valType="extendedCode"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="name" updates="None" val="send_resp_trigger_and_code" valType="code"/>
       </CodeComponent>
-      <StaticComponent name="trial_ISI">
-        <Param name="code" updates="None" val="" valType="code"/>
-        <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val=".5" valType="num"/>
-        <Param name="name" updates="None" val="trial_ISI" valType="code"/>
-        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val="" valType="num"/>
-        <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="0" valType="num"/>
-        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$trial_start_isi_duration " valType="num"/>
-        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-      </StaticComponent>
     </Routine>
     <Routine name="delay">
       <CodeComponent name="delay_control_monitor">
@@ -215,15 +202,15 @@
         <Param name="name" updates="None" val="delay_control_monitor" valType="code"/>
       </CodeComponent>
       <TextComponent name="delay_red_fix">
-        <Param name="color" updates="constant" val="$[1.000,-1.000,-1.000]" valType="str"/>
+        <Param name="color" updates="constant" val="red" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="20" valType="code"/>
         <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="1.0" valType="code"/>
+        <Param name="letterHeight" updates="constant" val="1" valType="code"/>
         <Param name="name" updates="None" val="delay_red_fix" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
@@ -233,7 +220,7 @@
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$delay_duration" valType="code"/>
+        <Param name="stopVal" updates="constant" val="delay_duration" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="text" updates="constant" val="+" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -247,7 +234,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Determine the current phase based on current file&amp;#10;if phase.thisRepN == 0:&amp;#10;    win.recordFrameIntervals = False&amp;#10;    this_phase = 'prac'&amp;#10;    this_stim_file = prac_file&amp;#10;else:&amp;#10;    win.recordFrameIntervals = True&amp;#10;    this_phase = 'crit'&amp;#10;    this_stim_file = crit_file&amp;#10;&amp;#10;# Display on control monitor if needed&amp;#10;if show_control:&amp;#10;    control_text.setText('Instructions')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="## Determine the current phase based on current file&amp;#10;if phase.thisRepN == 0:&amp;#10;    win.recordFrameIntervals = False&amp;#10;    this_phase = 'prac'&amp;#10;    this_stim_file = prac_file&amp;#10;else:&amp;#10;    win.recordFrameIntervals = True&amp;#10;    this_phase = 'crit'&amp;#10;    this_stim_file = crit_file&amp;#10;&amp;#10;# Display on control monitor if needed&amp;#10;if show_control:&amp;#10;    control_text.setText('Instructions')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -279,7 +266,7 @@
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="set every repeat" val="$this_block - this_phase" valType="str"/>
+        <Param name="text" updates="set every repeat" val="$f&quot;{this_block}-{this_phase}&quot;" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="220" valType="code"/>
       </TextComponent>
@@ -352,7 +339,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Make the save file name (This should have accurate id as it is reading from it)&amp;#10;save_file_name = f&quot;sub-{expInfo['id']}_task-{this_block}_run-{this_phase}_beh&quot;&amp;#10;save_pickle = save_dir /  save_file_name&amp;#10;save_tsv = save_dir / save_file_name + '.tsv'&amp;#10;save_csv = save_dir / save_file_name + '.csv'&amp;#10;&amp;#10;# Save it many different ways&amp;#10;trials.saveAsWideText(save_tsv)&amp;#10;trials.saveAsWideText(save_csv)&amp;#10;trials.saveAsPickle(save_pickle)&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Make the save file name (This should have accurate id as it is reading from it)&amp;#10;save_file_name = f&quot;sub-{expInfo['id']}_task-{this_block}_run-{this_phase}_beh&quot;&amp;#10;save_pickle = save_dir /  save_file_name&amp;#10;save_tsv = save_dir / (save_file_name + '.tsv')&amp;#10;save_csv = save_dir / (save_file_name + '.csv')&amp;#10;&amp;#10;# Save it many different ways&amp;#10;trials.saveAsWideText(save_tsv)&amp;#10;trials.saveAsWideText(save_csv)&amp;#10;trials.saveAsPickle(save_pickle)&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -364,13 +351,13 @@
         <Param name="name" updates="None" val="save_trial_handler" valType="code"/>
       </CodeComponent>
       <TextComponent name="final_red_fix">
-        <Param name="color" updates="constant" val="$[1.000,-1.000,-1.000]" valType="str"/>
+        <Param name="color" updates="constant" val="red" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="20" valType="code"/>
         <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
         <Param name="letterHeight" updates="constant" val="1" valType="code"/>
         <Param name="name" updates="None" val="final_red_fix" valType="code"/>
@@ -381,8 +368,8 @@
         <Param name="startEstim" updates="None" val="0" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$delay_duration" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="delay_duration" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="text" updates="constant" val="+" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -457,7 +444,7 @@
         <Param name="Begin Experiment" updates="constant" val="# Define number of trials between rests&amp;#10;task_break_n = 115" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Define the break display text&amp;#10;break_string = 'Take a break'&amp;#10;&amp;#10;# Determine if a break is needed&amp;#10;if trials.thisN == 0:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = True&amp;#10;elif trials.thisN % task_break_n != 0:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = False&amp;#10;else:&amp;#10;    continueRoutine = True &amp;#10;    draw_delay = True&amp;#10;&amp;#10;# Show control monitor if needed&amp;#10;if eeg_record and continueRoutine and show_control:&amp;#10;    control_text.setText('Break')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Define the break display text&amp;#10;break_string = 'Take a break'&amp;#10;&amp;#10;# Determine if a break is needed&amp;#10;if trials.thisN == 0:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = True&amp;#10;elif trials.thisN % task_break_n == 0:&amp;#10;    continueRoutine = True &amp;#10;    draw_delay = True&amp;#10;else:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = False&amp;#10;&amp;#10;# Show control monitor if needed&amp;#10;if eeg_record and continueRoutine and show_control:&amp;#10;    control_text.setText('Break')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="if break_resp.status == STARTED:&amp;#10;    break_string = 'Take a break /n/n Let the experimenter know when you are ready'&amp;#10;    " valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -475,7 +462,7 @@
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
         <Param name="letterHeight" updates="constant" val="1" valType="code"/>
         <Param name="name" updates="None" val="break_text" valType="code"/>
@@ -516,10 +503,10 @@
       <CodeComponent name="configure_options">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="## FRAM RATE OPTIMIZATION OPTIONS&amp;#10;processPriority = 'realtime' # Can be 'normal', 'high', 'realtime'&amp;#10;disableGC = True # disable garbage collection&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="## Import some useful libraries&amp;#10;from pathlib import Path&amp;#10;from random import shuffle&amp;#10;import pandas as pd&amp;#10;&amp;#10;## TASK PARAMETERS&amp;#10;# Proportion of go trials&amp;#10;go_proportion = .8&amp;#10;&amp;#10;## TIMING OPTIONS&amp;#10;# Timing Variables (all are in seconds)&amp;#10;# These are converted to frames in the Begin Routine tab (changed in place)&amp;#10;image_duration = .5 # Length the word is on the screen&amp;#10;trial_start_isi_duration = .250 # Static ISI time. Subtracted from min_jitter and max_jitter to make the list&amp;#10;delay_duration = 20.0 # Time padding beginning and end of a trial segment. &amp;#10;jitter_spacing = frameDur # Intervals between jitter possibilities, same as frameDur&amp;#10;min_jitter = 1.5 # Minimum jitter duration&amp;#10;max_jitter = 2.5 # Maximum jitter duration&amp;#10;&amp;#10;## EEG SETUP TRIGGER OPTIONS&amp;#10;eeg_com = 'COM5' # Can check the Device Manager in windows to figure this out (COM Ports). &amp;#10;reset_bit = [0] # Don't change this unless you know what you are doing&amp;#10;&amp;#10;# Stimulus markers&amp;#10;# The codes sent for trial has two digits.&amp;#10;# First digit codes fortrial type (1=go, 2=nogo)&amp;#10;# Second digit is emotion category (1=neutral, 2=negative, 3=positive)&amp;#10;# The Markers are in a dictionary&amp;#10;stim_marker = {&amp;#10;    'go': dict(neutral=[11], negative=[12]),&amp;#10;    'nogo': dict(neutral=[21], negative=[22])&amp;#10;}&amp;#10;&amp;#10;# Response markers&amp;#10;# This is the code for whether a response is given. &amp;#10;# The codes are 56 for correct go response and &amp;#10;# 57 for incorrecr response to a nogo trial&amp;#10;resp_marker = {&amp;#10;    'correct': [56],&amp;#10;    'incorrect': [57]&amp;#10;}" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="## Import some useful libraries&amp;#10;from pathlib import Path&amp;#10;from random import shuffle&amp;#10;import pandas as pd&amp;#10;&amp;#10;## TASK PARAMETERS&amp;#10;# Proportion of go trials&amp;#10;go_proportion = .8&amp;#10;&amp;#10;## TIMING OPTIONS&amp;#10;# Timing Variables (all are in seconds)&amp;#10;# These are converted to frames in the Begin Routine tab (changed in place)&amp;#10;image_duration = .4 # Length the image is on the screen&amp;#10;trial_start_isi_duration = .2 # Static ISI time. Subtracted from min_jitter and max_jitter to make the list&amp;#10;delay_duration = 1.0 # Time padding beginning and end of a trial segment. &amp;#10;jitter_spacing = frameDur # Intervals between jitter possibilities, same as frameDur&amp;#10;min_jitter = 1.1 # Minimum jitter duration&amp;#10;max_jitter = 1.7 # Maximum jitter duration&amp;#10;&amp;#10;# Make jitters list&amp;#10;jitters = np.arange(min_jitter-trial_start_isi_duration, max_jitter + frameDur - trial_start_isi_duration, frameDur)&amp;#10;&amp;#10;## EEG SETUP TRIGGER OPTIONS&amp;#10;eeg_com = 'COM5' # Can check the Device Manager in windows to figure this out (COM Ports). &amp;#10;reset_bit = [0] # Don't change this unless you know what you are doing&amp;#10;&amp;#10;# Stimulus markers&amp;#10;# The codes sent for trial has two digits.&amp;#10;# First digit codes fortrial type (1=go, 2=nogo)&amp;#10;# Second digit is emotion category (1=neutral, 2=negative, 3=positive)&amp;#10;# The Markers are in a dictionary&amp;#10;stim_marker = {&amp;#10;    'go': dict(neutral=[11], negative=[12]),&amp;#10;    'nogo': dict(neutral=[21], negative=[22])&amp;#10;}&amp;#10;&amp;#10;# Response markers&amp;#10;# This is the code for whether a response is given. &amp;#10;# The codes are 56 for correct go response and &amp;#10;# 57 for incorrecr response to a nogo trial&amp;#10;resp_marker = {&amp;#10;    'correct': [56],&amp;#10;    'incorrect': [57]&amp;#10;}" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Note that frameDur is the duration of a single frame estimated&amp;#10;# by psychopy. If it fails to detect in (e.g., frameRate == Null),&amp;#10;# this typically defaults to 60.0 Hz. Note that this timing scheme&amp;#10;# allows for reproducibility across systems (monitors, computers, etc.)&amp;#10;&amp;#10;# THE FOLLOWING SHOULD NOT BE CHANGED (minus variable names)&amp;#10;&amp;#10;# Critical timing pieces&amp;#10;iamge_duration = round(image_duration / frameDur) &amp;#10;trial_start_isi_duration = round(trial_start_isi_duration / frameDur)&amp;#10;delay_duration = round(delay_duration / frameDur)&amp;#10;&amp;#10;# Make jitters list&amp;#10;jitters = np.arange(min_jitter-trial_start_isi_duration, max_jitter + frameDur - trial_start_isi_duration, frameDur) / frameDur" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Note that frameDur is the duration of a single frame estimated&amp;#10;# by psychopy. If it fails to detect in (e.g., frameRate == Null),&amp;#10;# this typically defaults to 60.0 Hz. Note that this timing scheme&amp;#10;# allows for reproducibility across systems (monitors, computers, etc.)&amp;#10;&amp;#10;# THE FOLLOWING SHOULD NOT BE CHANGED (minus variable names)&amp;#10;&amp;#10;# Critical timing pieces&amp;#10;image_duration = round(image_duration / frameDur) &amp;#10;trial_start_isi_duration = round(trial_start_isi_duration / frameDur)&amp;#10;delay_duration = round(delay_duration / frameDur)&amp;#10;jitters = np.round(jitters / frameDur)&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -569,7 +556,7 @@
       <CodeComponent name="control_monitor_code">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="# Record frame intervals&amp;#10;win.recordFrameIntervals = False&amp;#10;&amp;#10;# Setup window 2 only if asked too&amp;#10;if show_control:&amp;#10;&amp;#10;    win2 = visual.Window(&amp;#10;        size=[1920,1080], fullscr=True, screen=1,&amp;#10;        allowGUI=False, allowStencil=False,&amp;#10;        color=[-1.0,-1.0,-1.0], colorSpace='rgb',&amp;#10;        blendMode='avg', useFBO=True,&amp;#10;        units='degFlat')&amp;#10;&amp;#10;    control_text = visual.TextStim(win=win2, &amp;#10;        text='default text',&amp;#10;        font='Helvetica',&amp;#10;        pos=(0, 0), height=1.5, wrapWidth=200, ori=0, &amp;#10;        color='white', colorSpace='rgb', opacity=1,&amp;#10;        depth=-1.0);" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="# Record frame intervals&amp;#10;win.recordFrameIntervals = False&amp;#10;&amp;#10;# Setup window 2 only if asked too&amp;#10;if show_control:&amp;#10;&amp;#10;    win2 = visual.Window(&amp;#10;        size=[1920,1080], fullscr=True, screen=1,&amp;#10;        allowGUI=False, allowStencil=False,&amp;#10;        color=[-1.0,-1.0,-1.0], colorSpace='rgb',&amp;#10;        blendMode='avg', useFBO=True,&amp;#10;        units='pixels')&amp;#10;&amp;#10;    control_text = visual.TextStim(win=win2, &amp;#10;        text='default text',&amp;#10;        font='Helvetica',&amp;#10;        pos=(0, 0), height=40, wrapWidth=200, ori=0, &amp;#10;        color='white', colorSpace='rgb', opacity=1,&amp;#10;        depth=-1.0)" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
@@ -623,7 +610,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="# Phase&amp;#10;phase = 'crit'&amp;#10;&amp;#10;# Make trial types&amp;#10;trial_types = ['go'] * 23 + ['nogo']*9&amp;#10;&amp;#10;# Shuffle the blocks&amp;#10;shuffle(trial_types)&amp;#10;&amp;#10;# Create stim file name&amp;#10;stimulus_file = f&quot;{word_cat}_words.csv&quot;" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Handle directories&amp;#10;image_dir = Path('images')&amp;#10;stim_dir = Path('stim_lists')&amp;#10;stim_dir = stim_dir / expInfo['id']&amp;#10;stim_dir.mkdir(exist_ok=True, parents=True)&amp;#10;&amp;#10;# Handle the file names&amp;#10;negative_file = stim_dir / f'sub-{id}_neg-go_neut-nogo_crit.csv'&amp;#10;neutral_file = stim_dir / f'sub-{id}_neg-nogo_neut-go_crit.csv'&amp;#10;&amp;#10;# Only make stimuli if the files don't exist. &amp;#10;if not negative_file.is_file() and not neutral_file.is_file():&amp;#10;&amp;#10;    # Read in stimuli data&amp;#10;    imgs = pd.read_csv('iaps_stimuli.csv')&amp;#10;    neg = imgs[imgs['category'] == 'negative']&amp;#10;    neut = imgs[imgs['category'] == 'neutral']&amp;#10;&amp;#10;    # Randomly split negative images into frac=80/20&amp;#10;    neg_go = neg.sample(frac=go_proportion)&amp;#10;    neg_go['condition'] = 'go'&amp;#10;    neg_nogo = neg.drop(neg_go.index)&amp;#10;    neg_nogo['condition'] = 'nogo'&amp;#10;&amp;#10;    # Randomly split neutral images into frac=80/20&amp;#10;    neut_go = neut.sample(frac=go_proportion)&amp;#10;    neut_go['condition'] = 'go'&amp;#10;    neut_nogo = neut.drop(neut_go.index)&amp;#10;    neut_nogo['condition'] = 'nogo'&amp;#10;&amp;#10;    # Make the blocks and save them&amp;#10;    negative_go = pd.concat([neg_go, neut_nogo], ignore_index=True)&amp;#10;    negative_go.to_csv(negative_file, index=False)&amp;#10;    neutral_go = pd.concat([neut_go, neg_nogo], ignore_index=True)&amp;#10;    neutral_go.to_csv(neutral_file, index=False)&amp;#10;&amp;#10;# Randomize block order&amp;#10;block_order = ['negative', 'neutral']&amp;#10;shuffle(block_order)" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Handle directories&amp;#10;image_dir = Path('images')&amp;#10;stim_dir = Path('stim_lists') / f&quot;sub-{expInfo['id']}&quot;&amp;#10;stim_dir.mkdir(exist_ok=True, parents=True)&amp;#10;&amp;#10;# Handle the file names&amp;#10;negative_file = stim_dir / f&quot;sub-{expInfo['id']}_neg-go_neut-nogo_crit.csv&quot;&amp;#10;neutral_file = stim_dir / f&quot;sub-{expInfo['id']}_neg-nogo_neut-go_crit.csv&quot;&amp;#10;&amp;#10;# Only make stimuli if the files don't exist. &amp;#10;if not negative_file.is_file() and not neutral_file.is_file():&amp;#10;&amp;#10;    # Read in stimuli data&amp;#10;    imgs = pd.read_csv('iaps_stimuli.csv')&amp;#10;    neg = imgs[imgs['category'] == 'negative']&amp;#10;    neut = imgs[imgs['category'] == 'neutral']&amp;#10;&amp;#10;    # Randomly split negative images into frac=80/20&amp;#10;    neg_go = neg.sample(frac=go_proportion)&amp;#10;    neg_go['condition'] = 'go'&amp;#10;    neg_nogo = neg.drop(neg_go.index)&amp;#10;    neg_nogo['condition'] = 'nogo'&amp;#10;&amp;#10;    # Randomly split neutral images into frac=80/20&amp;#10;    neut_go = neut.sample(frac=go_proportion)&amp;#10;    neut_go['condition'] = 'go'&amp;#10;    neut_nogo = neut.drop(neut_go.index)&amp;#10;    neut_nogo['condition'] = 'nogo'&amp;#10;&amp;#10;    # Make the blocks and save them&amp;#10;    negative_go = pd.concat([neg_go, neut_nogo], ignore_index=True)&amp;#10;    negative_go.to_csv(negative_file, index=False)&amp;#10;    neutral_go = pd.concat([neut_go, neg_nogo], ignore_index=True)&amp;#10;    neutral_go.to_csv(neutral_file, index=False)&amp;#10;&amp;#10;#&amp;#10;# Randomize block order&amp;#10;block_order = ['negative', 'neutral']&amp;#10;shuffle(block_order)" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -642,7 +629,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Get the list element from block_order (see setup-&gt;make_stim_lists)&amp;#10;this_block = block_order[nogo_blocks.thisRepN]&amp;#10;&amp;#10;# Define csv files &amp;#10;if this_block == 'negative':&amp;#10;    prac_file =  'neg-go_neut-nogo_prac.csv'&amp;#10;    crit_file = negative_file&amp;#10;    instruction_image_file = 'neg-go_neut-nogo_instructions.jpg'&amp;#10;else:&amp;#10;    prac_file = 'neg-nogo_neut-go_prac.csv'&amp;#10;    crit_file = neutral_file&amp;#10;    instruction_image_file = 'neg-nogo_neut-go_instructions.jpg'" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Get the list element from block_order (see setup-&gt;make_stim_lists)&amp;#10;this_block = block_order[blocks.thisRepN]&amp;#10;&amp;#10;# Define csv files &amp;#10;if this_block == 'negative':&amp;#10;    prac_file =  'neg-go_neut-nogo_prac.csv'&amp;#10;    crit_file = negative_file&amp;#10;    instruction_image_file = 'neg-go_neut-nogo_instructions.jpg'&amp;#10;else:&amp;#10;    prac_file = 'neg-nogo_neut-go_prac.csv'&amp;#10;    crit_file = neutral_file&amp;#10;    instruction_image_file = 'neg-nogo_neut-go_instructions.jpg'" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -685,7 +672,7 @@
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$this_sim_file" valType="file"/>
+      <Param name="conditionsFile" updates="None" val="$str(this_stim_file)" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
