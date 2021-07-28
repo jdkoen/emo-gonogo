@@ -639,10 +639,10 @@
       <CodeComponent name="select_stim_list">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="# Get the list element from block_order (see setup-&gt;make_stim_lists)&amp;#10;this_block = block_order[nogo_blocks.thisRepN]&amp;#10;&amp;#10;# Define csv files &amp;#10;if this_block == 'negative':&amp;#10;    prac_file =  'neg-go_neut-nogo_prac.csv'&amp;#10;    crit_file = negative_file&amp;#10;    instruction_image_file = 'neg-go_neut-nogo_instructions.jpg'&amp;#10;else:&amp;#10;    prac_file = 'neg-nogo_neut-go_prac.csv'&amp;#10;    crit_file = neutral_file&amp;#10;    instruction_image_file = 'neg-nogo_neut-go_instructions.jpg'" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Get the list element from block_order (see setup-&gt;make_stim_lists)&amp;#10;this_block = block_order[nogo_blocks.thisRepN]&amp;#10;&amp;#10;# Define csv files &amp;#10;if this_block == 'negative':&amp;#10;    prac_file =  'neg-go_neut-nogo_prac.csv'&amp;#10;    crit_file = negative_file&amp;#10;    instruction_image_file = 'neg-go_neut-nogo_instructions.jpg'&amp;#10;else:&amp;#10;    prac_file = 'neg-nogo_neut-go_prac.csv'&amp;#10;    crit_file = neutral_file&amp;#10;    instruction_image_file = 'neg-nogo_neut-go_instructions.jpg'" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
