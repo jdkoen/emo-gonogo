@@ -256,7 +256,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Display on control monitor if needed&amp;#10;if show_control:&amp;#10;    control_text.setText('Instructions')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="this_block = expInfo['task']&amp;#10;this_phase = expInfo['phase']&amp;#10;&amp;#10;# Display on control monitor if needed&amp;#10;if show_control:&amp;#10;    control_text.setText('Instructions')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
