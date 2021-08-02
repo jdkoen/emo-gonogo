@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2021.1.2">
+<PsychoPy2experiment encoding="utf-8" version="2021.2.1">
   <Settings>
     <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
     <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
@@ -7,7 +7,7 @@
     <Param name="Data file delimiter" updates="None" val="auto" valType="str"/>
     <Param name="Data filename" updates="None" val="u'archive/%s_%s_%s' % (expInfo['id'], expName, expInfo['date'])" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
-    <Param name="Experiment info" updates="None" val="{'id': '', 'eeg_record': &quot;['yes', 'no']&quot;, 'experimenter': '', 'show_control_monitor': &quot;['yes', 'no']&quot;}" valType="code"/>
+    <Param name="Experiment info" updates="None" val="{'id': '', 'experimenter': '', 'task': &quot;['1back', '2back']&quot;, 'phase': &quot;['prac', 'real']&quot;, 'eeg_record': &quot;['yes', 'no']&quot;, 'show_control_monitor': &quot;['yes', 'no']&quot;}" valType="code"/>
     <Param name="Force stereo" updates="None" val="True" valType="bool"/>
     <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
     <Param name="HTML path" updates="None" val="html" valType="str"/>
@@ -17,6 +17,7 @@
     <Param name="Resources" updates="None" val="[]" valType="list"/>
     <Param name="Save csv file" updates="None" val="False" valType="bool"/>
     <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save hdf5 file" updates="None" val="False" valType="bool"/>
     <Param name="Save log file" updates="None" val="True" valType="bool"/>
     <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
     <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
@@ -25,13 +26,33 @@
     <Param name="Show mouse" updates="None" val="False" valType="bool"/>
     <Param name="Units" updates="None" val="degFlat" valType="str"/>
     <Param name="Use version" updates="None" val="" valType="str"/>
-    <Param name="Window size (pixels)" updates="None" val="[1920, 1080]" valType="code"/>
+    <Param name="Window size (pixels)" updates="None" val="[1440, 900]" valType="code"/>
     <Param name="blendMode" updates="None" val="avg" valType="str"/>
     <Param name="color" updates="None" val="$[0.0,0.0,0.0]" valType="str"/>
     <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="elAddress" updates="None" val="100.1.1.1" valType="str"/>
+    <Param name="elDataFiltering" updates="None" val="FILTER_LEVEL_2" valType="str"/>
+    <Param name="elLiveFiltering" updates="None" val="FILTER_LEVEL_OFF" valType="str"/>
+    <Param name="elModel" updates="None" val="EYELINK 1000 DESKTOP" valType="str"/>
+    <Param name="elPupilAlgorithm" updates="None" val="ELLIPSE_FIT" valType="str"/>
+    <Param name="elPupilMeasure" updates="None" val="PUPIL_AREA" valType="str"/>
+    <Param name="elSampleRate" updates="None" val="1000" valType="num"/>
+    <Param name="elSimMode" updates="None" val="False" valType="bool"/>
+    <Param name="elTrackEyes" updates="None" val="RIGHT_EYE" valType="str"/>
+    <Param name="elTrackingMode" updates="None" val="PUPIL_CR_TRACKING" valType="str"/>
     <Param name="expName" updates="None" val="emo_gonogo" valType="str"/>
     <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="eyetracker" updates="None" val="None" valType="str"/>
+    <Param name="gpAddress" updates="None" val="127.0.0.1" valType="str"/>
+    <Param name="gpPort" updates="None" val="4242" valType="num"/>
     <Param name="logging level" updates="None" val="debug" valType="code"/>
+    <Param name="mgBlink" updates="None" val="('MIDDLE_BUTTON',)" valType="list"/>
+    <Param name="mgMove" updates="None" val="CONTINUOUS" valType="str"/>
+    <Param name="mgSaccade" updates="None" val="0.5" valType="num"/>
+    <Param name="tbLicenseFile" updates="None" val="" valType="str"/>
+    <Param name="tbModel" updates="None" val="" valType="str"/>
+    <Param name="tbSampleRate" updates="None" val="60" valType="num"/>
+    <Param name="tbSerialNo" updates="None" val="" valType="str"/>
   </Settings>
   <Routines>
     <Routine name="trial">
@@ -121,6 +142,7 @@
         <Param name="stopVal" updates="constant" val="image_duration" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="vertices" updates="constant" val="" valType="list"/>
       </PolygonComponent>
       <TextComponent name="trial_red_fixation">
         <Param name="color" updates="constant" val="red" valType="color"/>
@@ -516,7 +538,7 @@
       <CodeComponent name="configure_options">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="## FRAM RATE OPTIMIZATION OPTIONS&amp;#10;processPriority = 'realtime' # Can be 'normal', 'high', 'realtime'&amp;#10;disableGC = True # disable garbage collection&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="## Import some useful libraries&amp;#10;from pathlib import Path&amp;#10;from random import shuffle&amp;#10;import pandas as pd&amp;#10;&amp;#10;## TASK PARAMETERS&amp;#10;# Proportion of go trials&amp;#10;go_proportion = .8&amp;#10;&amp;#10;## TIMING OPTIONS&amp;#10;# Timing Variables (all are in seconds)&amp;#10;# These are converted to frames in the Begin Routine tab (changed in place)&amp;#10;image_duration = .4 # Length the image is on the screen&amp;#10;trial_start_isi_duration = .2 # Static ISI time. Subtracted from min_jitter and max_jitter to make the list&amp;#10;delay_duration = 20.0 # Time padding beginning and end of a trial segment. &amp;#10;jitter_spacing = frameDur # Intervals between jitter possibilities, same as frameDur&amp;#10;min_jitter = 1.1 # Minimum jitter duration&amp;#10;max_jitter = 1.7 # Maximum jitter duration&amp;#10;&amp;#10;# Make jitters list&amp;#10;jitters = np.arange(min_jitter-trial_start_isi_duration, max_jitter + frameDur - trial_start_isi_duration, frameDur)&amp;#10;&amp;#10;## EEG SETUP TRIGGER OPTIONS&amp;#10;eeg_com = 'COM5' # Can check the Device Manager in windows to figure this out (COM Ports). &amp;#10;reset_bit = [0] # Don't change this unless you know what you are doing&amp;#10;&amp;#10;# Stimulus markers&amp;#10;# The codes sent for trial has two digits.&amp;#10;# First digit codes fortrial type (1=go, 2=nogo)&amp;#10;# Second digit is emotion category (1=neutral, 2=negative, 3=positive)&amp;#10;# The Markers are in a dictionary&amp;#10;stim_marker = {&amp;#10;    'go': dict(neutral=[11], negative=[12]),&amp;#10;    'nogo': dict(neutral=[21], negative=[22])&amp;#10;}&amp;#10;&amp;#10;# Response markers&amp;#10;# This is the code for whether a response is given. &amp;#10;# The codes are 56 for correct go response and &amp;#10;# 57 for incorrecr response to a nogo trial&amp;#10;resp_marker = {&amp;#10;    'correct': [56],&amp;#10;    'incorrect': [57]&amp;#10;}" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="## Import some useful libraries&amp;#10;from pathlib import Path&amp;#10;from random import shuffle&amp;#10;import pandas as pd&amp;#10;&amp;#10;## TASK PARAMETERS&amp;#10;# Proportion of go trials&amp;#10;go_proportion = .8&amp;#10;&amp;#10;## TIMING OPTIONS&amp;#10;# Timing Variables (all are in seconds)&amp;#10;# These are converted to frames in the Begin Routine tab (changed in place)&amp;#10;image_duration = .4 # Length the image is on the screen&amp;#10;trial_start_isi_duration = .2 # Static ISI time. Subtracted from min_jitter and max_jitter to make the list&amp;#10;delay_duration = 20.0 # Time padding beginning and end of a trial segment. &amp;#10;jitter_spacing = frameDur # Intervals between jitter possibilities, same as frameDur&amp;#10;min_jitter = 1.1 # Minimum jitter duration&amp;#10;max_jitter = 1.7 # Maximum jitter duration&amp;#10;&amp;#10;# Make jitters list&amp;#10;jitters = np.arange(min_jitter - trial_start_isi_duration,&amp;#10;                    max_jitter + frameDur - trial_start_isi_duration,&amp;#10;                    frameDur)&amp;#10;&amp;#10;## EEG SETUP TRIGGER OPTIONS&amp;#10;eeg_com = 'COM5' # Can check the Device Manager in windows to figure this out (COM Ports). &amp;#10;reset_bit = [0] # Don't change this unless you know what you are doing&amp;#10;&amp;#10;# Stimulus markers&amp;#10;# The codes sent for trial has two digits.&amp;#10;# First digit codes fortrial type (1=go, 2=nogo)&amp;#10;# Second digit is emotion category (1=neutral, 2=negative, 3=positive)&amp;#10;# The Markers are in a dictionary&amp;#10;stim_marker = {&amp;#10;    'go': dict(neutral=[11], negative=[12]),&amp;#10;    'nogo': dict(neutral=[21], negative=[22])&amp;#10;}&amp;#10;&amp;#10;# Response markers&amp;#10;# This is the code for whether a response is given. &amp;#10;# The codes are 56 for correct go response and &amp;#10;# 57 for incorrecr response to a nogo trial&amp;#10;resp_marker = {&amp;#10;    'correct': [56],&amp;#10;    'incorrect': [57]&amp;#10;}" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="# Note that frameDur is the duration of a single frame estimated&amp;#10;# by psychopy. If it fails to detect in (e.g., frameRate == Null),&amp;#10;# this typically defaults to 60.0 Hz. Note that this timing scheme&amp;#10;# allows for reproducibility across systems (monitors, computers, etc.)&amp;#10;&amp;#10;# THE FOLLOWING SHOULD NOT BE CHANGED (minus variable names)&amp;#10;&amp;#10;# Critical timing pieces&amp;#10;image_duration = round(image_duration / frameDur) &amp;#10;trial_start_isi_duration = round(trial_start_isi_duration / frameDur)&amp;#10;delay_duration = round(delay_duration / frameDur)&amp;#10;jitters = np.round(jitters / frameDur)&amp;#10;" valType="extendedCode"/>
@@ -634,16 +656,14 @@
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="name" updates="None" val="make_stim_list" valType="code"/>
       </CodeComponent>
-    </Routine>
-    <Routine name="select_list">
-      <CodeComponent name="select_stim_list">
+      <CodeComponent name="select_stim_file">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Get the list element from block_order (see setup-&gt;make_stim_lists)&amp;#10;this_block = block_order[blocks.thisRepN]&amp;#10;&amp;#10;# Define csv files &amp;#10;if this_block == 'negative':&amp;#10;    prac_file =  'neg-go_neut-nogo_prac.csv'&amp;#10;    crit_file = negative_file&amp;#10;    instruction_image_file = 'neg-go_neut-nogo_instructions.jpg'&amp;#10;else:&amp;#10;    prac_file = 'neg-nogo_neut-go_prac.csv'&amp;#10;    crit_file = neutral_file&amp;#10;    instruction_image_file = 'neg-nogo_neut-go_instructions.jpg'" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Begin JS Routine" updates="constant" val="if ((expInfo[&quot;task&quot;] === &quot;negative&quot;)) {&amp;#10;    instruction_image_file = &quot;neg-go_neut-nogo_instructions.jpg&quot;;&amp;#10;    if ((expInfo[&quot;phase&quot;] === &quot;prac&quot;)) {&amp;#10;        stim_file = &quot;neg-go_neut-nogo_prac.csv&quot;;&amp;#10;    } else {&amp;#10;        stim_file = negative_file.toString();&amp;#10;    }&amp;#10;} else {&amp;#10;    instruction_image_file = &quot;neg-nogo_neut-go_instructions.jpg&quot;;&amp;#10;    if ((expInfo[&quot;phase&quot;] === &quot;prac&quot;)) {&amp;#10;        stim_file = &quot;neg-nogo_neut-go_prac.csv&quot;;&amp;#10;    } else {&amp;#10;        stim_file = neutral_file.toString();&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Get the stim file&amp;#10;if expInfo['task'] == 'negative':&amp;#10;    instruction_image_file = 'neg-go_neut-nogo_instructions.jpg'&amp;#10;    if expInfo['phase'] == 'prac':&amp;#10;        stim_file = 'neg-go_neut-nogo_prac.csv'&amp;#10;    else:&amp;#10;        stim_file = str(negative_file)&amp;#10;else:&amp;#10;    instruction_image_file = 'neg-nogo_neut-go_instructions.jpg'&amp;#10;    if expInfo['phase'] == 'prac':&amp;#10;        stim_file = 'neg-nogo_neut-go_prac.csv'&amp;#10;    else:&amp;#10;        stim_file = str(neutral_file)&amp;#10;" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -651,41 +671,18 @@
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="name" updates="None" val="select_stim_list" valType="code"/>
+        <Param name="name" updates="None" val="select_stim_file" valType="code"/>
       </CodeComponent>
     </Routine>
   </Routines>
   <Flow>
     <Routine name="config"/>
     <Routine name="setup"/>
-    <LoopInitiator loopType="TrialHandler" name="blocks">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="file"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="False" valType="bool"/>
-      <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="2" valType="num"/>
-      <Param name="name" updates="None" val="blocks" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
-    <Routine name="select_list"/>
-    <LoopInitiator loopType="TrialHandler" name="phase">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="file"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="False" valType="bool"/>
-      <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="2" valType="num"/>
-      <Param name="name" updates="None" val="phase" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <Routine name="instructions"/>
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$str(this_stim_file)" valType="file"/>
+      <Param name="conditionsFile" updates="None" val="$stim_file" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
@@ -698,8 +695,6 @@
     <Routine name="trial"/>
     <LoopTerminator name="trials"/>
     <Routine name="save_trials"/>
-    <LoopTerminator name="phase"/>
-    <LoopTerminator name="blocks"/>
     <Routine name="task_complete"/>
   </Flow>
 </PsychoPy2experiment>
