@@ -98,7 +98,7 @@
         <Param name="durationEstim" updates="None" val=".5" valType="num"/>
         <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
         <Param name="flipVert" updates="constant" val="False" valType="bool"/>
-        <Param name="image" updates="set during: trial.trial_ISI" val="$this_image" valType="file"/>
+        <Param name="image" updates="set every repeat" val="$this_image" valType="file"/>
         <Param name="interpolate" updates="constant" val="linear" valType="str"/>
         <Param name="mask" updates="constant" val="" valType="str"/>
         <Param name="name" updates="None" val="stim_image" valType="code"/>
@@ -107,7 +107,7 @@
         <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="size" updates="constant" val="(12.0, 9.0)" valType="list"/>
-        <Param name="startEstim" updates="None" val=".2" valType="num"/>
+        <Param name="startEstim" updates="None" val=".3" valType="num"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="num"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -135,7 +135,7 @@
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="shape" updates="constant" val="regular polygon..." valType="str"/>
         <Param name="size" updates="constant" val="(0.75,0.75)" valType="code"/>
-        <Param name="startEstim" updates="None" val=".2" valType="code"/>
+        <Param name="startEstim" updates="None" val=".3" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -149,7 +149,7 @@
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="2" valType="num"/>
+        <Param name="durationEstim" updates="None" val="2.2" valType="num"/>
         <Param name="flip" updates="constant" val="None" valType="str"/>
         <Param name="font" updates="constant" val="Open Sans" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
@@ -159,11 +159,11 @@
         <Param name="ori" updates="constant" val="0" valType="num"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val=".2" valType="num"/>
+        <Param name="startEstim" updates="None" val="0" valType="num"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="trial_start_isi_duration " valType="num"/>
+        <Param name="startVal" updates="None" val="0" valType="num"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="image_duration + this_jitter" valType="num"/>
+        <Param name="stopVal" updates="constant" val="trial_start_isi_duration + image_duration + this_jitter" valType="num"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="text" updates="constant" val="+" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -174,11 +174,11 @@
         <Param name="correctAns" updates="constant" val="" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="1.8" valType="code"/>
+        <Param name="durationEstim" updates="None" val="1.9" valType="code"/>
         <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
         <Param name="name" updates="None" val="response" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val=".2" valType="code"/>
+        <Param name="startEstim" updates="None" val=".3" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
@@ -193,7 +193,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# State I have not sent a response trigger yet, and initialize response.keys&amp;#10;resp_trigger_sent = False &amp;#10;resp_marker = []&amp;#10;resp_marker_frame = 0&amp;#10;&amp;#10;# Response markers are outlined in the config routine." valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# State I have not sent a response trigger yet, and initialize response.keys&amp;#10;resp_trigger_sent = False&amp;#10;resp_marker_frame = 0&amp;#10;&amp;#10;# Response markers are outlined in the config routine." valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="# Send response trigger&amp;#10;if eeg_record:&amp;#10;    if len(response.keys) == 1:&amp;#10;        &amp;#10;        # Code the response&amp;#10;        this_key = response.keys&amp;#10;        this_rt  = response.rt&amp;#10;        if condition == 'go':&amp;#10;            is_resp_cor = 1&amp;#10;            resp_type = 'correct'&amp;#10;        else:&amp;#10;            is_resp_cor = 0&amp;#10;            resp_type = 'incorrect'&amp;#10;        &amp;#10;        # Send the marker&amp;#10;        if not resp_trigger_sent and this_phase == 'crit':&amp;#10;            # Make call to send trigger&amp;#10;            win.callOnFlip(eeg_trig_box.write, resp_marker[resp_type])&amp;#10;            resp_trigger_sent = True &amp;#10;            resp_marker_frame = frameN&amp;#10;            trials.addData(u'resp_trigger_frame', resp_marker_frame)&amp;#10;            &amp;#10;    # Reset the trigger at the next flip&amp;#10;    if resp_trigger_sent and frameN == resp_marker_frame + 5:&amp;#10;        win.callOnFlip(eeg_trig_box.write, reset_bit)" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -204,19 +204,6 @@
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="name" updates="None" val="send_resp_trigger_and_code" valType="code"/>
       </CodeComponent>
-      <StaticComponent name="trial_ISI">
-        <Param name="code" updates="None" val="" valType="code"/>
-        <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val=".2" valType="num"/>
-        <Param name="name" updates="None" val="trial_ISI" valType="code"/>
-        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val="0" valType="num"/>
-        <Param name="startType" updates="None" val="frame N" valType="str"/>
-        <Param name="startVal" updates="None" val="0" valType="num"/>
-        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="trial_start_isi_duration" valType="num"/>
-        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
-      </StaticComponent>
     </Routine>
     <Routine name="delay">
       <CodeComponent name="delay_control_monitor">
@@ -538,7 +525,7 @@
       <CodeComponent name="configure_options">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="## FRAM RATE OPTIMIZATION OPTIONS&amp;#10;processPriority = 'realtime' # Can be 'normal', 'high', 'realtime'&amp;#10;disableGC = True # disable garbage collection&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="## Import some useful libraries&amp;#10;from pathlib import Path&amp;#10;from random import shuffle&amp;#10;import pandas as pd&amp;#10;&amp;#10;## TASK PARAMETERS&amp;#10;# Proportion of go trials&amp;#10;go_proportion = .8&amp;#10;&amp;#10;## TIMING OPTIONS&amp;#10;# Timing Variables (all are in seconds)&amp;#10;# These are converted to frames in the Begin Routine tab (changed in place)&amp;#10;image_duration = .5 # Length the image is on the screen&amp;#10;trial_start_isi_duration = .2 # Static ISI time. Subtracted from min_jitter and max_jitter to make the list&amp;#10;delay_duration = 20.0 # Time padding beginning and end of a trial segment. &amp;#10;jitter_spacing = frameDur # Intervals between jitter possibilities, same as frameDur&amp;#10;min_jitter = 1.1 # Minimum jitter duration&amp;#10;max_jitter = 1.7 # Maximum jitter duration&amp;#10;&amp;#10;# Make jitters list&amp;#10;jitters = np.arange(min_jitter - trial_start_isi_duration,&amp;#10;                    max_jitter + frameDur - trial_start_isi_duration,&amp;#10;                    frameDur)&amp;#10;&amp;#10;## EEG SETUP TRIGGER OPTIONS&amp;#10;eeg_com = 'COM5' # Can check the Device Manager in windows to figure this out (COM Ports). &amp;#10;reset_bit = [0] # Don't change this unless you know what you are doing&amp;#10;&amp;#10;# Stimulus markers&amp;#10;# The codes sent for trial has two digits.&amp;#10;# First digit codes fortrial type (1=go, 2=nogo)&amp;#10;# Second digit is emotion category (1=neutral, 2=negative, 3=positive)&amp;#10;# The Markers are in a dictionary&amp;#10;stim_marker = {&amp;#10;    'go': dict(neutral=[11], negative=[12]),&amp;#10;    'nogo': dict(neutral=[21], negative=[22])&amp;#10;}&amp;#10;&amp;#10;# Response markers&amp;#10;# This is the code for whether a response is given. &amp;#10;# The codes are 56 for correct go response and &amp;#10;# 57 for incorrecr response to a nogo trial&amp;#10;resp_marker = {&amp;#10;    'correct': [56],&amp;#10;    'incorrect': [57]&amp;#10;}" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="## Import some useful libraries&amp;#10;from pathlib import Path&amp;#10;from random import shuffle&amp;#10;import pandas as pd&amp;#10;&amp;#10;## TASK PARAMETERS&amp;#10;# Proportion of go trials&amp;#10;go_proportion = .8&amp;#10;&amp;#10;## TIMING OPTIONS&amp;#10;# Timing Variables (all are in seconds)&amp;#10;# These are converted to frames in the Begin Routine tab (changed in place)&amp;#10;image_duration = .5 # Length the image is on the screen&amp;#10;trial_start_isi_duration = .3 # Static ISI time. Subtracted from min_jitter and max_jitter to make the list&amp;#10;delay_duration = 20.0 # Time padding beginning and end of a trial segment. &amp;#10;jitter_spacing = frameDur # Intervals between jitter possibilities, same as frameDur&amp;#10;min_jitter = 1.1 # Minimum jitter duration&amp;#10;max_jitter = 1.7 # Maximum jitter duration&amp;#10;&amp;#10;# Make jitters list&amp;#10;jitters = np.arange(min_jitter - trial_start_isi_duration,&amp;#10;                    max_jitter + frameDur - trial_start_isi_duration,&amp;#10;                    frameDur)&amp;#10;&amp;#10;## EEG SETUP TRIGGER OPTIONS&amp;#10;eeg_com = 'COM5' # Can check the Device Manager in windows to figure this out (COM Ports). &amp;#10;reset_bit = [0] # Don't change this unless you know what you are doing&amp;#10;&amp;#10;# Stimulus markers&amp;#10;# The codes sent for trial has two digits.&amp;#10;# First digit codes fortrial type (1=go, 2=nogo)&amp;#10;# Second digit is emotion category (1=neutral, 2=negative, 3=positive)&amp;#10;# The Markers are in a dictionary&amp;#10;stim_marker = {&amp;#10;    'go': dict(neutral=[11], negative=[12]),&amp;#10;    'nogo': dict(neutral=[21], negative=[22])&amp;#10;}&amp;#10;&amp;#10;# Response markers&amp;#10;# This is the code for whether a response is given. &amp;#10;# The codes are 56 for correct go response and &amp;#10;# 57 for incorrecr response to a nogo trial&amp;#10;resp_marker = {&amp;#10;    'correct': [56],&amp;#10;    'incorrect': [57]&amp;#10;}" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="# Note that frameDur is the duration of a single frame estimated&amp;#10;# by psychopy. If it fails to detect in (e.g., frameRate == Null),&amp;#10;# this typically defaults to 60.0 Hz. Note that this timing scheme&amp;#10;# allows for reproducibility across systems (monitors, computers, etc.)&amp;#10;&amp;#10;# THE FOLLOWING SHOULD NOT BE CHANGED (minus variable names)&amp;#10;&amp;#10;# Critical timing pieces&amp;#10;image_duration = round(image_duration / frameDur) &amp;#10;trial_start_isi_duration = round(trial_start_isi_duration / frameDur)&amp;#10;delay_duration = round(delay_duration / frameDur)&amp;#10;jitters = np.round(jitters / frameDur)&amp;#10;" valType="extendedCode"/>
