@@ -466,9 +466,9 @@
         <Param name="Begin Experiment" updates="constant" val="# Define number of trials between rests&amp;#10;task_break_n = 115" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Define the break display text&amp;#10;break_string = 'Take a break'&amp;#10;&amp;#10;# Determine if a break is needed&amp;#10;if trials.thisN == 0:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = True&amp;#10;elif trials.thisN % task_break_n == 0:&amp;#10;    continueRoutine = True &amp;#10;    draw_delay = True&amp;#10;else:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = False&amp;#10;&amp;#10;# Show control monitor if needed&amp;#10;if eeg_record and continueRoutine and show_control:&amp;#10;    control_text.setText('Break')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="&amp;#10;# Determine if a break is needed&amp;#10;if trials.thisN == 0:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = True&amp;#10;elif trials.thisN % task_break_n == 0:&amp;#10;    continueRoutine = True &amp;#10;    draw_delay = True&amp;#10;else:&amp;#10;    continueRoutine = False&amp;#10;    draw_delay = False&amp;#10;&amp;#10;# Show control monitor if needed&amp;#10;if eeg_record and continueRoutine and show_control:&amp;#10;    control_text.setText('Break')&amp;#10;    control_text.draw()&amp;#10;    win2.flip()" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="if break_resp.status == STARTED:&amp;#10;    break_string = 'Take a break /n/n Let the experimenter know when you are ready'&amp;#10;    " valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -477,7 +477,7 @@
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="name" updates="None" val="task_break_code" valType="code"/>
       </CodeComponent>
-      <TextComponent name="break_text">
+      <TextComponent name="break_text1">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="contrast" updates="constant" val="1" valType="num"/>
@@ -487,7 +487,7 @@
         <Param name="font" updates="constant" val="Open Sans" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
         <Param name="letterHeight" updates="constant" val="1" valType="code"/>
-        <Param name="name" updates="None" val="break_text" valType="code"/>
+        <Param name="name" updates="None" val="break_text1" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
@@ -498,9 +498,34 @@
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="set every repeat" val="$break_string" valType="str"/>
+        <Param name="text" updates="set every repeat" val="Take a break." valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="break_text2">
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="None" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="1" valType="num"/>
+        <Param name="name" updates="None" val="break_text2" valType="code"/>
+        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="30" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="&amp;#10;&amp;#10;&amp;#10;Let the experimenter know when you are ready to continue. " valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
       <KeyboardComponent name="break_resp">
         <Param name="allowedKeys" updates="constant" val="[' ','space']" valType="code"/>
