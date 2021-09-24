@@ -1,7 +1,6 @@
 # Ignore stimulus image databases
 images/
 prac_images/
-stim_lists/
 data/
 archive/
 *.zip
