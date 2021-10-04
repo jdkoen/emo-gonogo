@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2021.2.3">
+<PsychoPy2experiment encoding="utf-8" version="2021.2.1">
   <Settings>
     <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
     <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
@@ -7,13 +7,13 @@
     <Param name="Data file delimiter" updates="None" val="auto" valType="str"/>
     <Param name="Data filename" updates="None" val="u'archive/%s_%s_%s' % (expInfo['id'], expName, expInfo['date'])" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
-    <Param name="Experiment info" updates="None" val="{'id': '', 'experimenter': '', 'stim_list': '', 'task': &quot;['square-go', 'circle-go']&quot;, 'phase': &quot;['prac', 'crit']&quot;, 'eeg_record': &quot;['yes', 'no']&quot;, 'show_control_monitor': &quot;['no', 'yes']&quot;}" valType="code"/>
+    <Param name="Experiment info" updates="None" val="{'id': '', 'experimenter': '', 'stim_list': '', 'task': &quot;['square-go', 'circle-go']&quot;, 'phase': &quot;['prac', 'real']&quot;, 'eeg_record': &quot;['yes', 'no']&quot;, 'show_control_monitor': &quot;['no', 'yes']&quot;}" valType="code"/>
     <Param name="Force stereo" updates="None" val="True" valType="bool"/>
     <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
     <Param name="HTML path" updates="None" val="html" valType="str"/>
     <Param name="Incomplete URL" updates="None" val="" valType="str"/>
     <Param name="JS libs" updates="None" val="packaged" valType="str"/>
-    <Param name="Monitor" updates="None" val="BenQ" valType="str"/>
+    <Param name="Monitor" updates="None" val="RoseLab" valType="str"/>
     <Param name="Resources" updates="None" val="[]" valType="list"/>
     <Param name="Save csv file" updates="None" val="False" valType="bool"/>
     <Param name="Save excel file" updates="None" val="False" valType="bool"/>
@@ -157,10 +157,10 @@
         <Param name="name" updates="None" val="photosensor_dot" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(-24.0, 0.0)" valType="code"/>
+        <Param name="pos" updates="constant" val="(-35.3, -19.2)" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="shape" updates="constant" val="regular polygon..." valType="str"/>
-        <Param name="size" updates="constant" val="(0.75,0.75)" valType="code"/>
+        <Param name="size" updates="constant" val="(1.5,1.5)" valType="code"/>
         <Param name="startEstim" updates="None" val=".25" valType="code"/>
         <Param name="startType" updates="None" val="frame N" valType="str"/>
         <Param name="startVal" updates="None" val="trial_start_isi_duration" valType="code"/>
@@ -221,7 +221,7 @@
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="# State I have not sent a response trigger yet, and initialize response.keys&amp;#10;resp_trigger_sent = False&amp;#10;resp_marker_frame = 0&amp;#10;&amp;#10;# Response markers are outlined in the config routine." valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="# Code the response when it happens&amp;#10;if len(response.keys) == 1:&amp;#10;        &amp;#10;    # Code the response&amp;#10;    this_key = response.keys&amp;#10;    this_rt  = response.rt&amp;#10;    if trial_type == 'go':&amp;#10;        is_resp_cor = 1&amp;#10;        resp_type = 'correct'&amp;#10;    else:&amp;#10;        is_resp_cor = 0&amp;#10;        resp_type = 'incorrect'&amp;#10;            &amp;#10;# Send response trigger&amp;#10;if eeg_record and this_phase == 'real':&amp;#10;    # Send the marker&amp;#10;    if not resp_trigger_sent:&amp;#10;        # Make call to send trigger&amp;#10;        win.callOnFlip(eeg_trig_box.write, resp_marker[resp_type])&amp;#10;        resp_trigger_sent = True &amp;#10;        resp_marker_frame = frameN&amp;#10;        trials.addData(u'resp_trigger_frame', resp_marker_frame)&amp;#10;            &amp;#10;    # Reset the trigger at the next flip&amp;#10;    if resp_trigger_sent and frameN == resp_marker_frame + 1:&amp;#10;        win.callOnFlip(eeg_trig_box.write, reset_bit)" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="# Send response trigger&amp;#10;if eeg_record:&amp;#10;&amp;#10;    # Code the response when it happens&amp;#10;    if len(response.keys) == 1:&amp;#10;            &amp;#10;        # Code the response&amp;#10;        this_key = response.keys&amp;#10;        this_rt  = response.rt&amp;#10;        if trial_type == 'go':&amp;#10;            is_resp_cor = 1&amp;#10;            resp_type = 'correct'&amp;#10;        else:&amp;#10;            is_resp_cor = 0&amp;#10;            resp_type = 'incorrect'&amp;#10;                &amp;#10;        # Send the marker&amp;#10;        if not resp_trigger_sent and this_phase == 'real':&amp;#10;            # Make call to send trigger&amp;#10;            win.callOnFlip(eeg_trig_box.write, resp_marker[resp_type])&amp;#10;            resp_trigger_sent = True &amp;#10;            resp_marker_frame = frameN&amp;#10;            trials.addData(u'resp_trigger_frame', resp_marker_frame)&amp;#10;                &amp;#10;    # Reset the trigger at the next flip&amp;#10;    if resp_trigger_sent and frameN == resp_marker_frame + 1:&amp;#10;        win.callOnFlip(eeg_trig_box.write, reset_bit)" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
