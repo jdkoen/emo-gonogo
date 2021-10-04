@@ -1,11 +1,10 @@
-    """
-    This script creates stimulus lists for the emotional go-nogo task. 
-    In this task, negative and neutral images are presented with a 
-    circle or squared overlaid onto it. The circle and square indicate
-    go and no-go trials (balanced between individuals). 
-    """
+"""
+This script creates stimulus lists for the emotional go-nogo task. 
+In this task, negative and neutral images are presented with a 
+circle or squared overlaid onto it. The circle and square indicate
+go and no-go trials (balanced between individuals). 
+"""
 
-import os
 import pandas as pd
 import numpy as np
 
@@ -15,7 +14,7 @@ n_go_sets = 4  # Number of times each image is in go trial
 n_nogo_sets = 1 # number of times each image is in nogo trial
 
 # Load stimulus lists
-stims = pd.read_csv('prac_stims.csv')
+stims = pd.read_csv('crit_stims.csv')
 
 # Loop through and make sets
 for i in np.arange(n_lists):
